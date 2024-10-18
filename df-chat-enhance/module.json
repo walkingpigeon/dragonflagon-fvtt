@@ -1,9 +1,9 @@
 {
-	"id": "df-chat-enhance",
-	"title": "DF Chat Enhancements",
+	"id": "WP-chat-enhance",
+	"title": "WP Chat Enhancements",
 	"description": "Various enhancements to the chat features.",
 	"version": "4.1.0",
-	"author": "flamewave000#0001",
+	"author": "walkingpigeon",
 	"compatibility": {
 		"minimum": 10,
 		"verified": 10.288
