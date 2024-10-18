@@ -1,16 +1,7 @@
 import * as DFChatArchive from "./archive/df-chat-archive";
-import DFChatEdit from "./edit/df-chat-edit";
 import * as DFAdventureLog from "./logger/df-adventure-log";
 import DFAdventureLogProcessor from "./logger/DFAdventureLogProcessor";
-import ChatMerge from "./merge/chat-merge";
-import ChatRollPrivacy from "./privacy/df-chat-privacy";
-import ScrollManage from "./scroll-manage/scroll-manage";
 import SETTINGS from "../../common/Settings";
-import WhisperTruncation from "./whisper-trunc/whisper-trunc";
-import PlayerColor from './player-color/PlayerColor';
-import SendButton from "./send/send-button";
-import FontSizePatch from "./font-size/font-size";
-import ChatTime from "./chat-time/chat-time";
 SETTINGS.init('df-chat-enhance');
 
 declare global {
@@ -36,15 +27,7 @@ Hooks.once('init', function () {
 	 * from <a> tags to <button> tags if enabled.
 	 */
 	DFChatArchive.init();
-	ChatRollPrivacy.init();
 	DFAdventureLog.init();
-	ChatMerge.init();
-	ScrollManage.init();
-	WhisperTruncation.init();
-	PlayerColor.init();
-	SendButton.init();
-	FontSizePatch.init();
-	ChatTime.init();
 
 	libWrapper.register(SETTINGS.MOD_NAME, 'ChatLog.prototype._getEntryContextOptions', function (wrapped: (...args: any) => ContextMenu.Item[], ...args: any) {
 		const options = wrapped(...args);
@@ -62,7 +45,4 @@ Hooks.once('ready', function () {
 	}
 	DFAdventureLog.ready();
 	DFChatEdit.ready();
-	ChatMerge.ready();
-	ScrollManage.ready();
-	ChatTime.ready();
 });
